@@ -1,0 +1,20 @@
+.TaggedImages {
+  .card-like, .card-tag {
+    display: block;
+  }
+
+  .card-hover {
+    font-size: 1em;
+  }
+
+  .avatar {
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+
+  .TaggedImage--button {
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+  }
+}

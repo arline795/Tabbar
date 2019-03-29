@@ -1,0 +1,36 @@
+language: ruby
+rvm:
+  - 2.3.1
+
+services:
+  - postgres
+  - selenium
+  - poltergeist
+  
+before_install:
+  - sudo apt-get -y update
+  - sudo apt-get -y install libpq-dev
+  - sudo apt-get -y install imagemagick
+  - gem update bundler --no-ri --no-rdoc
+  - cd .
+  - ruby -v
+
+before_script:
+  - cp config/database.shippable.yml config/database.yml
+  - cp config/application.yml.example config/application.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
+  - . $HOME/.nvm/nvm.sh
+  - nvm install stable
+  - nvm use stable
+  - npm install
+  - npm i -g yarn@1.3.2
+  - yarn
+
+script:
+  - bundle exec massa
+
+notifications:
+    email:
+      recipients:
+        - admin@taddar.com

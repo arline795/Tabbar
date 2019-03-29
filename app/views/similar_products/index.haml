@@ -1,0 +1,5 @@
+.bg-grey-xlight.min-h100vh
+  .container.relative.max-w500px.pt4
+    .mb4
+      = link_to 'Back', request.referer, class: 'button'
+    = react_component 'ImageUploader', auth_token: AuthToken.for(@user), uuid: params[:uuid]

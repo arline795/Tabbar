@@ -1,0 +1,42 @@
+= javascript_include_tag :defaults, 'nested_form'
+
+= render 'partials/header', title: 'Update User Profile'
+
+.flex-auto.bg-grey-xxlight
+  .container.py10
+    = render 'shared/error_messages', form_object: @user
+    = simple_form_for @user, url: user_path, method: :patch do |f|
+      .flex.justify-between.sm-flex-column
+        .form-half
+          .form-section
+            %h3 Avatar
+            .flex.flex-wrap.justify-between
+              .c1in2.flex.justify-start
+                .mb4
+                  = image_tag @user.avatar.url(:medium), class: 'w100'
+                  .mt2= link_to 'Delete Avatar', destroy_avatar_users_path(@user), class: 'button button-small'
+            = f.input :avatar, label: 'Upload Avatar', as: :file
+
+          .form-section
+            %h3 Header Image
+            .flex.flex-wrap.justify-between
+              .c1in2.flex.justify-start
+                .mb4
+                  - if @user.header_image.present?
+                    = image_tag @user.header_image.url(:thumb), class: 'w100'
+                    .mt2= link_to 'Delete Header Image', destroy_header_image_users_path(@user), class: 'button button-small'
+            = f.input :header_image, label: 'Upload Header Image', as: :file
+
+        .form-half
+          %h3 User Information
+          = f.input :username, required: true, autofocus: true
+          = f.input :first_name, required: true
+          = f.input :last_name, required: true
+          = f.country_select :country, ['Australia', 'United States', 'United Kingdom'], required: true
+          = f.input :email, class: 'form-control'
+          = f.input :date_of_birth, as: :string, input_html: { class: 'datepicker' }, placeholder: 'mm-dd-yyyy'
+          = f.input :website_url, class: 'form-control'
+          = f.input :description, class: 'form-control'
+
+      .form-submit
+        = f.button :submit, class: 'button button-red'

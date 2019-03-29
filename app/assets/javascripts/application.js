@@ -1,0 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require flash_message
+//= require dropzone.min
+//= require turbolinks
+//= require jquery.turbolinks
+//= require jquery.dataTables.min
+//= require account_activations
+//= require instagram_images
+//= require product
+//= require tables
+//= require complete
+//= require crawl_categories
+//= require navigation
+//= require react_ujs

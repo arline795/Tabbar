@@ -1,0 +1,49 @@
+/* Bar User
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bar-user {
+  .avatar {
+    width: 40px;
+    height: 40px;
+
+    &:after {
+      width: 53px;
+      height: 53px;
+      border: 2px solid $white;
+      margin: -4px 0 0 -4px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .mobile-bar {
+    display: none;
+  }
+}
+
+input#mobile-bar[type="checkbox"] {
+  display: none;
+}
+
+input#mobile-bar[type="checkbox"]:checked ~ .mobile-bar {
+  display: flex;
+}
+
+/* Alert User
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.alert-bar {
+  background-color: #e4e4e4;
+  height: 3.5em;
+  line-height: 50%;
+  .avatar {
+    width: 45px;
+    height: 45px;
+
+    &:after {
+      width: 53px;
+      height: 53px;
+      border: 2px solid $white;
+      margin: -4px 0 0 -4px;
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .font-large #{@product_crawler.user.username} / #{@product_crawler.base_url.gsub(/.*?:\/\//, '')}
+    .my5.bg-white.p6
+      .flex.items-center.crawler-menu
+        = link_to 'Settings', [:edit, :admin, :crawling, @product_crawler]
+        - Category.roots.each do |category|
+          = link_to "#{category.name.capitalize} Categories", admin_crawling_product_crawler_root_category_path(@product_crawler, category), class: ('active' if category == @category)
+      - if @product_crawler.viglink?
+        = simple_form_for [:admin, :crawling, @product_crawler, @root_crawl_category] do |f|
+          = f.input :viglink_category
+          .right-align.mt2
+            = f.submit 'Save', class: 'button button-wide button-blue'
+      = simple_form_for [:admin, :crawling, @product_crawler, @crawl_category] do |f|
+        = f.input :url, label: @product_crawler.viglink? ? 'Query' : 'URL'
+        .form-group.select.optional.crawl_category_category_ids
+          = label_tag 'crawl_category[category_ids][]', 'Category', class: 'control-label select optional'
+          .categories-wrapper
+            .category-wrapper.flex.items-center.py2
+              = select_tag 'crawl_category[category_ids][]', options_for_select(@category.self_and_descendants.map(&:to_option)), include_blank: false, class: 'form-control select crawl-category-select m0'
+              = link_to 'x', '#', class: 'js-remove-category ml2'
+          = link_to 'Add another category', '#', class: 'js-add-category block my2'
+        .right-align.mt2
+          = f.submit 'Create crawl category', class: 'button button-wide button-blue'
+    - @product_crawler.crawl_categories.where(category: @category.self_and_descendants).group_by(&:url).each do |url, crawl_categories|
+      .my4.bg-white.p6
+        .flex.justify-between.items-center
+          .w60.truncate.pr2{ title: url }= url
+          .w40.flex-column
+            - crawl_categories.each do |crawl_category|
+              .flex.w100.mt1
+                .w60= crawl_category.category.hierachy_name
+                .w40.right-align= link_to 'Delete', [:admin, :crawling, @product_crawler, crawl_category], method: :delete, class: 'text-blue', data: { confirm: 'Are you sure?' }

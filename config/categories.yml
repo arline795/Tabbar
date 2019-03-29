@@ -1,0 +1,117 @@
+# New womens category >>>>>>>>>>>
+women:
+  bridal:
+    - bride
+    - bridesmade
+  coats_and_jackets:
+    - casual
+    - denim
+    - leather
+    - waistcoats
+    - coats
+  dresses:
+    - long
+    - short
+  jeans:
+    - slim
+    - relaxed
+    - boot_cut
+  jumpsuits:
+    - all
+  knitwear_and_pullover:
+    - cardigans
+    - cashmere
+    - crewnecks & scoopnecks
+    - turtlenecks
+    - v_necks
+  pants:
+    - casual
+    - formal
+    - cargo
+  shirts:
+    - t_shits
+    - long_sleeved
+    - formal
+  shorts:
+    - casual
+    - denium
+  skirts:
+    - mini
+    - mid_length
+    - long
+  sweaters_and_hoodies:
+    - hoodies
+    - sweatshirts
+  swimwear:
+    - swimsuits
+    - bikinis
+    - cover_ups
+  tops:
+    - blowses
+    - long_sleeved
+    - short_sleeve_tops
+    - sleeveless_and_tank_tops
+  # Uncomment these when we provide these categories
+  # activewear:
+  #   - jacket
+  #   - tops
+  #   - shorts
+  #   - leggings
+  #   - tracksuits
+  # lingerie_and_nightwear:
+  #   - bodysuits
+  #   - bras
+  #   - cominsoles
+  #   - basques_bustiers_and_corsets
+  #   - knickers
+  #   - lingerie sets
+  # shoes:
+  #   - boots
+  #   - high_heels
+  #   - trainers
+  #   - formal
+  #   - sandles
+  # suits:
+  #   - trouser_suits
+  #   - skirt_suits
+  #   - blazers
+
+men:
+  coats_and_jackets:
+    - denim
+    - leather
+    - overcoats_and_trench_coats
+    - jackets
+    - wool
+  jeans:
+    - slim
+    - relaxed
+    - straight_leg
+  pants:
+    - casual
+    - formal
+    - cargo
+  shirts:
+    - longsleeve
+    - shortsleeve
+    - t-shirts
+    - singlet
+
+  shorts:
+    - cargo
+    - casual
+    - chino
+  sweaters_and_hoodies:
+    - sweaters
+    - hoodies
+  # Uncomment these when we provide these categories
+  # suits:
+  #   - jackets
+  #   - tuxedo
+  #   - suit
+  # shoes:
+  #   - boots
+  #   - loafers
+  #   - trainers
+  #   - formal
+  #   - sandles

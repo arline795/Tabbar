@@ -1,0 +1,39 @@
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.c1in1 { width: 100%; }
+.c2in3 { width: 66%; }
+.c1in2 { width: 50%; }
+.c1in3 { width: 33.3%; }
+.c1in4 { width: 25%; }
+.c3in4 { width: 75%; }
+.c2in5 { width: 40%; }
+.c3in5 { width: 60%; }
+.c4in5 { width: 80%; }
+.c1in5 { width: 20%; }
+
+// lg
+@media screen and (min-width: $desktop) {
+  .lg-c1in1 { width: 100%; }
+  .lg-c2in3 { width: 66%; }
+  .lg-c1in2 { width: 50%; }
+  .lg-c1in3 { width: 33%; }
+  .lg-c4in5 { width: 80%; }
+}
+
+// md
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
+  .md-c1in1.md-c1in1 { width: 100%; }
+  .md-c2in3.md-c2in3 { width: 66%; }
+  .md-c1in2.md-c1in2 { width: 50%; }
+  .md-c1in3.md-c1in3 { width: 33%; }
+  .md-c4in5.md-c4in5 { width: 80%; }
+}
+
+// sm
+@media screen and (max-width: $tablet) {
+  .sm-c1in1.sm-c1in1.sm-c1in1 { width: 100%; }
+  .sm-c2in3.sm-c2in3.sm-c2in3 { width: 66%; }
+  .sm-c1in2.sm-c1in2.sm-c1in2 { width: 50%; }
+  .sm-c1in3.sm-c1in3.sm-c1in3 { width: 33%; }
+  .sm-c1in3.sm-c4in5.sm-c4in5 { width: 82%; }
+}

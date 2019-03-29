@@ -1,0 +1,39 @@
+table.dataTable thead {
+  .sorting {
+    background: image-url('sort_both.png') no-repeat right center;
+  }
+
+  .sorting_asc {
+    background-image: image-url('sort_asc.png');
+  }
+
+  .sorting_desc {
+    background-image: image-url('sort_desc.png');
+  }
+
+  .sorting_asc_disabled {
+    background-image: image-url('sort_asc_disabled.png');
+  }
+
+  .sorting_desc_disabled {
+    background-image: image-url('sort_desc_disabled.png');
+  }
+}
+
+.dataTables_wrapper {
+  label {
+    white-space: nowrap;
+  }
+
+  select {
+    width: auto;
+  }
+
+  .dataTables_length {
+    display: inline-block;
+  }
+
+  .dataTables_filter {
+    float: right;
+  }
+}

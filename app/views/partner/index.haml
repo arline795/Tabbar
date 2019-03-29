@@ -1,0 +1,17 @@
+.flex.flex-column.max-w600px.m-auto.h100vh-10rem.mt4
+  .center-align.pb4
+    %h3.font-title.font-serif The new way for brands to drive sales
+    %p Apply for your products to be automatically listed on Taddar and we will send qualified shoppers direct to your website.
+
+
+  .center-align.pb4
+    = link_to 'Sign up with Instagram', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'button button-blue button-wide'
+
+  .mt2.center-align.font-small.mb4
+    %h6
+      By signing up you agree with Taddar's
+      = link_to 'Terms of Service', terms_and_conditions_path, class: 'text-grey-dark text-black-hover'
+      and
+      = link_to 'Privacy Policy', privacy_policy_path, class: 'text-grey-dark text-black-hover'
+
+    = image_tag 'https://s3.amazonaws.com/yorlook/landing_page/computer.png', class: 'w100 mt4'

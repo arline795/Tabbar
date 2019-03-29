@@ -1,0 +1,57 @@
+/* Tabs
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tab-item {
+  @extend .py1;
+  @extend .px2;
+  @extend .border-bottom-solid;
+  @extend .text-grey;
+  border-radius: $border-radius $border-radius 0 0;
+
+  &:hover {
+    color: $black;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &.active {
+      color: $black;
+      border: 1px solid $grey;
+      border-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: $desktop) {
+    width: 100%;
+    border: 1px solid $grey;
+    border-radius: $border-radius;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    &.active {
+      color: $black;
+      border: 1px solid $black;
+    }
+  }
+}
+
+.product-tab-item {
+  @extend .py1;
+  @extend .px4;
+  @extend .border-bottom-solid;
+  @extend .text-grey;
+  border-radius: $border-radius $border-radius 0 0;
+
+  &.active {
+    color: $black;
+    border: 1px solid $grey;
+    border-bottom: 0;
+  }
+}
+
+.tab-content {
+  margin-top: 3rem;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

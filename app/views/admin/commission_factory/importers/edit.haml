@@ -1,0 +1,22 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .flex
+      .font-large.pr2
+        Webhose Crawler / #{@crawler.user.username}
+      = link_to 'Crawl', execute_admin_commission_factory_importer_path(@crawler, modify: true), method: :post, data: { confirm: 'Are you sure you want to crawl commission factory?' }, class: 'button button-blue mr2'
+      = link_to 'Delete Uncrawled Products', admin_commission_factory_importer_products_destroyer_index_path(@crawler, crawled: false), method: :post, data: { confirm: "Are you sure you want to delete all products that haven't been crawled?" }, class: 'button button-red mr2'
+      = link_to 'Delete All Products', admin_commission_factory_importer_products_destroyer_index_path(@crawler), method: :post, data: { confirm: 'Are you sure you want to delete all products?' }, class: 'button button-red'
+    .my5.bg-white.p6
+      .flex.items-center.crawler-menu
+        = link_to 'Settings', edit_admin_commission_factory_importer_path(@crawler), class: 'active'
+        - Category.roots.each do |category|
+          = link_to "#{category.name.capitalize} Categories", admin_commission_factory_importer_root_category_path(@crawler, category)
+      = simple_form_for @crawler, url: admin_commission_factory_importer_path, method: :patch do |f|
+        .form-section
+          = f.input :user_id, label: 'User', collection: User.all, value_method: :id, label_method: :username, selected: @crawler.user_id
+          - if f.object.csv.present?
+            %p.bold Current CSV
+            = link_to f.object.csv.original_filename, f.object.csv.url
+          = f.input :csv, as: :file
+          .right-align.mt2
+            = f.submit 'Save', class: 'button button-wide button-blue'

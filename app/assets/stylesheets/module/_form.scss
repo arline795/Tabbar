@@ -1,0 +1,60 @@
+/* Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.form-half {
+  @extend .sm-c1in1;
+  @extend .md-c1in2;
+  @extend .lg-c1in2;
+  @extend .md-px4;
+  @extend .lg-px4;
+}
+
+.form-submit {
+  @extend .md-px4;
+  @extend .lg-px4;
+}
+
+.form-section {
+  @extend .mb6;
+}
+
+.product-image {
+  display: inline-block;
+
+  .product-image-holder {
+    width: 100px;
+    height: 100px;
+  }
+
+  img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+.del-icon {
+  top: -1rem;
+  right: -1rem;
+  display: block;
+  padding: 0.2rem 1rem;
+  border-radius: 100%;
+  color: white;
+  background: $red;
+
+  &.del-icon-black {
+    top: 0;
+    right: 0;
+    font-size: 0.85em;
+    padding: 0 0.7rem 0.2rem 0.7rem;
+    background: $black;
+  }
+}
+
+.drop-zone {
+  padding-top: 23rem;
+  padding-bottom: 23rem;
+  font-size: 0.8em;
+}
+
+.dz-preview {
+  display: none !important;
+}

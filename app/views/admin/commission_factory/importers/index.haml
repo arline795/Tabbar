@@ -1,0 +1,19 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .flex.justify-between
+      .font-large Commission Factory Importer
+      = link_to 'Create', new_admin_commission_factory_importer_path, class: 'button button-wide button-blue'
+    .my5.bg-white.p6
+      %table#example
+        %thead
+          %tr
+            %th.left-align User
+            %th.right-align.no-sort Actions
+        %tbody
+          - @crawlers.each do |crawler|
+            %tr
+              %td.left-align= link_to crawler.user.username, user_outfits_path(crawler.user)
+              %td.right-align
+                = link_to 'Crawl', execute_admin_commission_factory_importer_path(crawler, modify: true), method: :post, data: { confirm: 'Are you sure you want to import commission factory?' }, class: 'text-green'
+                = link_to 'Edit', edit_admin_commission_factory_importer_path(crawler), class: 'text-blue'
+                = link_to 'Delete', admin_commission_factory_importer_path(crawler), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red'

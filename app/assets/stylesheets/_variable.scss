@@ -1,0 +1,76 @@
+/* Color Variable
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$white:                   #FFFFFF;
+$black:                   #1A1A1A;
+$green:                   #51B834;
+$blue-light:              #2b92f2;
+$blue-xxlight:            #F1F5F9;
+$blue-xxxlight:           #F5F5FA;
+$grey-xxlight:            #F0F0F0;
+$grey-dark:               #9B9B9B;
+$red:                     #DC5353;
+$dark-red:                #A72424;
+$blue:                    #1B90C5;
+$dark-blue:               #15729C;
+$green:                   #51B834;
+$green-dark:              #408E2A;
+
+$black-o3:                rgba(26, 26, 26, 0.3);
+
+$grey-xlight:             #EAEAEA;
+$grey-light:              #DEDEDE;
+$grey:                    #BEBEBE;
+$grey-xdark:              #444444;
+
+$brand-green:             #0AC497;
+$brand-blue:              #6853C1;
+
+
+
+
+/* Font Size
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$font-base:               1.6rem; // 16px
+$font-small:              $font-base * 0.875;   // 14px
+$font-smaller:            $font-base * 0.75;    // 12px
+$font-large:              $font-base * 1.5;     // 24px
+$font-larger:             $font-base * 2.25;    // 36px
+$font-title:              $font-base * 2.625;   // 42px
+
+/* Line height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$font-sans:               "Roboto","San Francisco Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-serif:              Georgia, "Times New Roman", Times, serif;
+$font-mono:               Monaco, Courier, monospace;
+$font-typographica:       "Typographica", "Helvetica", sans-serif;
+
+/* Line height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$line-height-base:        1.5;
+$line-height-small:       1.375;
+$line-height-smaller:     1.25;
+$line-height-smallest:    1.125;
+$line-height-large:       1.75;
+
+/* Border Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$border:                  1px solid;
+$border-radius:           5px;
+$border-radius-large:     10px;
+
+/* Shadow
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$box-shadow:              0 0 2px $grey;
+$box-shadow-hover:        0 0 8px $grey;
+$large-box-shadow:        0px 3px 12px #bebebe;
+
+/* Transition
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$text-transition:         color 0.2s ease-in-out 0s;
+$all-transition:          all 0.2s ease 0s;
+
+/* Breakpoint Size
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+$mobile:                  480px;
+$tablet:                  768px;
+$desktop:                 1024px;

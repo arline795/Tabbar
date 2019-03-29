@@ -1,0 +1,13 @@
+.flex.flex-wrap.justify-between
+  - collection.each do |user|
+    .c1in3.md-c1in2.sm-c1in1.p4
+      .square_item_image
+        = link_to image_tag(user.avatar.url(:large)), user_outfits_path(user)
+      .panel-body
+        .itemlistretailer
+          .itemlisttitle
+            .truncate-w80px= link_to user.username, user_outfits_path(user)
+            %br/
+            #{user.products.count} products
+            %br/
+            #{user.medias.count} medias

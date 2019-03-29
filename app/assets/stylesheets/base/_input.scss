@@ -1,0 +1,107 @@
+/* Inputs
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+label {
+  font-size: $font-small;
+  font-weight: 300;
+  color: $grey-xdark;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="url"],
+input[type="number"] {
+  padding: 1rem;
+  border: $border;
+  border-color: $grey;
+  outline: 0;
+  border-radius: $border-radius;
+  background-color: $white;
+
+  &:focus {
+    border-color: $black;
+    transition: border-color 0.2s;
+
+    ~ label {
+      color: $black;
+    }
+  }
+
+  &:disabled {
+    background-color: $grey-light;
+  }
+}
+
+input[type="submit"] {
+  border: 0;
+  background-color: initial;
+  border-width: 1px;
+  border-style: solid;
+}
+
+input[type="file"],
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+select,
+textarea {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: $border;
+  border-color: $grey;
+  border-radius: $border-radius;
+  cursor: pointer;
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: top 0.75em right 1em;
+  background-size: 1.5rem;
+  width: 100%;
+  outline: none;
+
+  &:focus {
+    border-color: $black;
+    transition: border-color 0.2s;
+
+    ~ label {
+      color: $black;
+    }
+  }
+}
+
+select[multiple="multiple"] {
+  background-image: none;
+}
+
+textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+/* Icons in input
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input.search[type="text"] {
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+}
+
+select {
+  padding-right: 3.5rem;
+  background-image: image-url('down-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-position: calc(100% - 1rem) center;
+}
+
+input.short-input {
+  width: 4.7rem;
+}

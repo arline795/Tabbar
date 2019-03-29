@@ -1,0 +1,7 @@
+- demo_user = User.find_by(slug: 'demo')
+
+.bg-grey-xlight.min-h100vh
+  .container-no-padding.pt4
+    = react_component 'InstagramPostUploader', auth_token: AuthToken.for(demo_user)
+    = react_component 'ImageDashboardUploader', auth_token: AuthToken.for(demo_user)
+    = react_component 'ImageOfInterestList', auth_token: AuthToken.for(demo_user)

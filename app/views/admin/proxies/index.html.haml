@@ -1,0 +1,23 @@
+.flex-auto
+  .container.py10
+    .flex.justify-between.mb4
+      %h2.mb0 Proxies
+      %p
+        = link_to 'New Proxy', new_admin_proxy_path, class: 'button button-red'
+
+    %table#example
+      %thead
+        %tr
+          %th.left-align Ip address
+          %th.left-align User Agent
+          %th.right-align.no-sort Actions
+      %tbody
+        - @proxies.each do |proxy|
+          %tr
+            %td.left-align= proxy.full_address
+            %td.left-align= proxy.user_agent
+            %td.right-align
+              = link_to edit_admin_proxy_path(proxy), title: 'Edit' do
+                %i.fa.fa-pencil
+              = link_to admin_proxy_path(proxy), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do
+                %i.fa.fa-trash

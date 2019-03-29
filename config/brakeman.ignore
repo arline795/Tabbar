@@ -1,0 +1,25 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "1d3c19d3f520aa3bb15711d074a3f91f32661de497f552899bdccd347517ed16",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/products/show.html.haml",
+      "line": 44,
+      "link": "http://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Product.find(params[:id]).tag_list.map do\n link_to(h(t.to_s), tag_path(t))\n end.join(\", \")",
+      "render_path": [{"type":"controller","class":"ProductsController","method":"show","line":73,"file":"app/controllers/products_controller.rb"}],
+      "location": {
+        "type": "template",
+        "template": "products/show"
+      },
+      "user_input": "Product.find(params[:id]).tag_list",
+      "confidence": "Weak",
+      "note": ""
+    }
+  ],
+  "updated": "2017-03-07 23:15:50 +0700",
+  "brakeman_version": "3.5.0"
+}

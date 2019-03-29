@@ -1,0 +1,10 @@
+.flex.flex-column.max-w600px.m-auto.h100vh-10rem.mt4
+  .center-align.pb4
+    %h1.my4.font-xlarge-light.font-serif Contact Us
+
+  = simple_form_for :contact_us, url: pages_contact_us_path, method: :post  do |f|
+    = f.input :email, required: true, autofocus: true
+    = f.label :message
+    = f.text_area :message, required: true, autofocus: true
+
+    = f.button :submit, 'Send message', class: 'button button-black'

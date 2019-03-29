@@ -1,0 +1,28 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .flex.justify-between
+      .font-large #{'Viglink' if @viglink} Website Crawlers
+      = link_to 'Create', new_admin_crawling_product_crawler_path(viglink: @viglink), class: 'button button-wide button-blue'
+    .my5.bg-white.p6
+      %table#example
+        %thead
+          %tr
+            %th.left-align User
+            %th.left-align= @viglink ? 'Merchant' : 'Base URL'
+            %th.right-align.no-sort Actions
+        %tbody
+          - @product_crawlers.each do |product_crawler|
+            %tr
+              %td.left-align= link_to product_crawler.user.username, user_outfits_path(product_crawler.user)
+              %td.left-align= product_crawler.base_url
+              %td.right-align
+                = link_to edit_admin_crawling_product_crawler_path(product_crawler), title: 'Edit' do
+                  %i.fa.fa-pencil
+                = link_to admin_crawling_taddar_vision_export_path(id: product_crawler.id), title: 'Export to taddar vision', method: :post do
+                  %i.fa.fa-upload
+                = link_to execute_admin_crawling_product_crawler_path(product_crawler, modify: true), title: 'Crawl and modify existing (Slow)', method: :post do
+                  %i.fa.fa-arrow-circle-down
+                = link_to execute_admin_crawling_product_crawler_path(product_crawler), title: 'Crawl and ignore existing (Quick)', method: :post do
+                  %i.fa.fa-arrow-down
+                = link_to admin_crawling_product_crawler_path(product_crawler), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do
+                  %i.fa.fa-trash

@@ -1,0 +1,89 @@
+/* Sizes
+/  - container
+/  - max width
+/  - width
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Container
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  max-width: 1000px;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-no-padding {
+  max-width: 1000px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Max Width
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.max-w150px { max-width: 150px; }
+.max-w300px { max-width: 300px; }
+.max-w350px { max-width: 350px; }
+.max-w450px { max-width: 450px; }
+.max-w500px { max-width: 500px; }
+.max-w600px { max-width: 600px; }
+.max-w750px { max-width: 750px; }
+.max-w900px { max-width: 900px; }
+.max-w100   { max-width: 100%;  }
+
+/* Min Height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.min-h100vh { min-height: 100vh; }
+.min-h750px { min-height: 750px; }
+
+/* Max Height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.max-h200px { max-height: 200px; }
+.max-h590px { max-height: 590px; }
+/* Width
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.w100 { width: 100%; }
+.w75  { width: 75%; }
+.w70  { width: 70%; }
+.w60  { width: 60%; }
+.w50  { width: 50%; }
+.w49  { width: 49%; }
+.w45  { width: 45%; }
+.w40  { width: 40%; }
+.w35  { width: 35%; }
+.w30  { width: 30%; }
+.w25  { width: 25%; }
+.w20  { width: 20%; }
+.w15  { width: 15%; }
+.w10  { width: 10%; }
+
+.w20px  { width: 20px; }
+.w40px  { width: 40px; }
+
+.w33  { width: calc(33.33% - 10px); }
+
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
+  .md-w70 { width: 70%; }
+}
+
+@media screen and (max-width: $tablet) {
+  .sm-w100 { width: 100%; }
+}
+
+/* Height
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.h200px { height: 200px; }
+.h60px { height: 60px; }
+.h100vh-10rem { height: calc(75vh) }
+
+.h20 { height: 20% }
+.h40 { height: 40% }
+.h50 { height: 50% }
+.h100 { height: 100%; }
+
+.h3em { height: 3em; }
+
+.h20px  { height: 20px; }

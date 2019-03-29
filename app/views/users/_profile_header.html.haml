@@ -1,0 +1,11 @@
+.u-relative.pt10.pb5.bg-grey-xxlight
+  .container
+    .flex.justify-center
+      = image_tag user.avatar(:large), class: 'header-avatar mr2'
+      .flex.flex-column
+        %h2.bold= user.username
+        %p.max-w450px= user.description
+    .flex.justify-center
+      = link_to 'Outfits', user_outfits_path(user), class: 'button button-small button-blue m1'
+      - if user.products.any?
+        = link_to 'Products', users_product_path(user), class: 'button button-small button-blue m1'

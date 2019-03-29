@@ -1,0 +1,174 @@
+/* Home Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.home-header {
+  input[type="text"],
+  select {
+    border-color: $white;
+    color: $white;
+
+    &:focus {
+      border-color: $white;
+    }
+
+    option {
+      color: $black;
+    }
+  }
+
+  a.button {
+    border: 1px solid $white;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $black-o3;
+      outline: 0;
+      color: $white;
+    }
+  }
+
+  input.search[type="submit"] {
+    border-color: $grey;
+  }
+
+  select {
+    background-image: image-url('down-arrow-white.svg');
+  }
+
+  .logo,
+  i.fa.fa-bars{
+    color: $white;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .mobile-nav {
+    input[type="text"],
+    select {
+      border-color: $black;
+      color: $black;
+
+      &:focus {
+        border-color: $black;
+      }
+    }
+
+    select {
+      background-image: image-url('down-arrow.svg');
+    }
+  }
+
+  .shop {
+    color: $white;
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .nav {
+    a {
+      color: $white;
+      &:hover {
+        color: $black;
+      }
+    }
+
+    .tablet-nav-bar a {
+      color: $black;
+      &:hover {
+        color: $grey;
+      }
+    }
+
+    a.login:hover {
+      color: $white;
+    }
+
+    .avatar:after {
+      border: 1px solid $white;
+    }
+
+    .truncate-w80px {
+      color: $white;
+    }
+  }
+}
+
+.search-icon {
+  position: absolute;
+  transform: scaleX(-1);
+  top: 2.65rem;
+  right: 1rem;
+}
+
+.home-header-image {
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-header-image-1,
+.home-header-image-2,
+.home-header-image-3 {
+  @extend .home-header-image;
+}
+
+.home-header-image-1 {
+  width: 120px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: image-url('high-heels.svg');
+}
+
+.home-header-image-2 {
+  background-image: image-url('instagram.svg');
+}
+
+.home-header-image-3 {
+  background-image: image-url('shopping-cart.svg');
+}
+
+
+.land-page-devise-img {
+    width: 100%;
+}
+
+.land-page-how-it-works-01 {
+  width: 100%;
+}
+
+.landing-page-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.landing-page-title-font {
+  font-weight: 600;
+  font-size: 24px;
+  color: #0AC497;
+}
+
+.landing-page-heading-font {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.landing-page-p-font {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.landing-page-link {
+  font-weight: 400;
+}
+
+.landing-page-title-icon {
+  width: 5em;
+}
+
+.landing-page-show {
+  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+}

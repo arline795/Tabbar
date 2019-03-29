@@ -1,0 +1,24 @@
+.flex-auto
+  .container.py10
+    .flex.justify-between.mb4
+      %h2.mb0 Users
+      %p
+        = link_to 'New User', new_admin_user_path, class: 'button button-green'
+    %table#example
+      %thead
+        %tr
+          %th.left-align Username
+          %th.left-align Instagram Username
+          %th.left-align Country
+          %th.right-align.no-sort Actions
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td.left-align= user.username
+            %td.left-align= user.instagram_username
+            %td.left-align= user.country
+            %td.right-align
+              = link_to edit_admin_user_path(user), title: 'Edit' do
+                %i.fa.fa-pencil
+              = link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete' do
+                %i.fa.fa-trash

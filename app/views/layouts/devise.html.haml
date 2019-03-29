@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Taddar
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }
+    %meta{ content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no', name: 'viewport' }
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body.flex.flex-column.min-h100vh
+    = render 'layouts/flash_messages'
+    .py1
+      .container
+        .center-align
+          = link_to 'taddar', root_path,
+            class: 'font-larger typographica text-black-hover'
+
+    .flex.flex-auto.items-center.py4.sm-px4
+      = yield
+
+    = render 'layouts/footer'

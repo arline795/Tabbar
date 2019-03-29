@@ -1,0 +1,11 @@
+.container.max-w450px
+  .center-align
+    %h3.font-serif
+      Welcome
+      = current_user.username
+    .hvr-pulse= image_tag current_user.avatar.url(:medium), class: 'text-black max-w450px'
+    %p.text-black.pt6 Just add your email and you're done.
+
+  = simple_form_for current_user, url: update_profile_users_path, method: :patch do |f|
+    = f.input_field :email, placeholder: 'Email', label: false, required: true
+    = f.button :submit, 'Save', class: 'button button-black'

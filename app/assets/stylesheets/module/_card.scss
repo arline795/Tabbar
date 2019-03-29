@@ -1,0 +1,169 @@
+/* Card
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card, .card-wrapper {
+  @extend .h100;
+  border-radius: $border-radius;
+
+  &.card-shadow {
+    border: none;
+    box-shadow: $large-box-shadow;
+    &:hover {
+      transition: $all-transition;
+    }
+  }
+
+  &.square {
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: $tablet) {
+    &.card-shadow.sm-no-shadow {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.card-header,
+.card-footer {
+  @extend .mb4;
+  @extend .font-small;
+
+  &.p0 {
+    @extend .p0;
+  }
+}
+
+.card-footer {
+  float: right;
+}
+
+.card-like,
+.card-tag,
+.card-comment {
+  display: inline-block;
+  margin-left: 20px;
+  color: #1a1a1a;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    margin-top: 5px;
+    margin-left: -17px;
+  }
+}
+
+.card-like:before {
+  background: image-url("like.svg") no-repeat;
+}
+
+.card-tag:before {
+  background: image-url("tag.svg") no-repeat;
+}
+
+.card-comment:before {
+  background: image-url("comment.svg") no-repeat;
+}
+
+.card-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 1.3em;
+
+  .card-like,
+  .card-tag,
+  .card-title,
+  .card-price {
+    display: block;
+    filter: invert(1);
+    color: #1a1a1a;
+
+    &:before {
+      margin-left: -25px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .card-tag, .card-like {
+    margin-left: calc(50% - 20px);
+  }
+}
+
+.card:hover .card-hover {
+  display: block;
+}
+
+/* Keep the image square:
+http://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout */
+.card-image-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: "";
+    display: block;
+    margin-top: 100%; /* 1:1 aspect ratio */
+  }
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: 50%;
+
+  .card-img-inner {
+    width: 100%;
+    height: 100%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  > img {
+    width: 100%;
+  }
+}
+
+.masonry {
+  .card-image {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    line-height: 0;
+  }
+
+  .card-image-container {
+    &:before {
+      display: inline;
+    }
+  }
+
+  .card {
+    height: auto;
+  }
+}

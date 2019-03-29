@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @proxy] do |f|
+  .form-section
+    = f.input :ip
+    = f.input :port
+    = f.input :user
+    = f.input :password
+    = f.input :user_agent
+  .form-submit
+    = f.button :submit, class: 'button button-red'

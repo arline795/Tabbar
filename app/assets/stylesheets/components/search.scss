@@ -1,0 +1,16 @@
+.Search {
+  padding-top: 2rem;
+
+  .suggestions {
+    top: 5rem;
+    left: 0;
+    right: 0;
+    border: 1px solid $grey;
+    border-top: none;
+    z-index: 3;
+  }
+
+  input[type="text"] {
+    padding: 0.3rem;
+  }
+}

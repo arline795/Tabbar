@@ -1,0 +1,17 @@
+SECRET_KEY_BASE: xxxxxxxxxxxxxxxx
+INSTAGRAM_CLIENT_ID: xxxxxxxxxxxxx
+INSTAGRAM_CLIENT_SECRET: xxxxxxxxxxxx
+ACTION_MAILER_SMTP_USER_NAME: only-need-on-production
+ACTION_MAILER_SMTP_PASSWORD: only-need-on-production
+PAYPAL_MODE: sandbox
+PAYPAL_APP_ID: xxxxxxxxxxxxxxxxxxxxx
+PAYPAL_USERNAME: xxxxxxxxxxxxxxxxxxxxx
+PAYPAL_PASSWORD: xxxxxxxxxxxxxxxxxxxxx
+PAYPAL_SIGNATURE: xxxxxxxxxxxxxxxxxxxxx
+PAYPAL_SANDBOX_EMAIL_ADDRESS: xxxxxxxxxxxxxxxxxxxxx
+CLARIFAI_MODEL: xxxxxxxxxxxxxxx
+CLARIFAI_API_KEY: xxxxxxxxxxxxxxx
+VIGLINK_API_KEY: xxxxxxxxxxxxxxx
+VIGLINK_AUTHORIZATION: xxxxxxxxxxxxxxx
+VIGLINK_PRODUCT_SEARCH_URL: https://rest.viglink.com/api/product/search
+GRAPH_API_PAGE_ACCESS_TOKEN: GRAPH_API_PAGE_ACCESS_TOKEN

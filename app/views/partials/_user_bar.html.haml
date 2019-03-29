@@ -1,0 +1,24 @@
+.bar-user.bg-black
+  .container.py1
+    .flex.justify-between.items-center.sm-flex-column
+      .flex.items-center
+        .avatar.mr2
+          = image_tag user.avatar.url
+        .ml1.truncate-w80px.text-white= link_to user.username, user_outfits_path(user),
+          class: 'text-white'
+        / need link
+        = link_to user_outfits_path(user) do
+          .ml6.flex.flex-column.items-center.text-white.text-grey-hover
+            .font-base.sm-font-small.bold= user.products.count
+            .font-small.sm-font-smaller Products
+
+      %input#mobile-bar{ type: 'checkbox' }
+      .mobile-bar.flex.items-center.sm-mt6
+        - if user.instagram?
+          %span.ml6.font-larger.text-white.text-grey-hover
+            = link_to user.instagram_url do
+              %i.fa.fa-instagram.white
+
+        %span.ml6.font-larger.text-white.text-grey-hover
+          = link_to new_message_path(receiver_user_id: user.id) do
+            %i.fa.fa-envelope.white

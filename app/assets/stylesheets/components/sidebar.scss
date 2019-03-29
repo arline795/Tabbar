@@ -1,0 +1,39 @@
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 30rem;
+  z-index: 200;
+  border-right: 1px solid;
+  box-shadow: $grey 0 1px 5px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.breadcrumb-item {
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: '/';
+    margin: 0 1rem;
+  }
+
+  &:last-of-type::after {
+    content: '';
+    margin: 0;
+  }
+}
+
+div.active-category {
+  span {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: none;
+  }
+}

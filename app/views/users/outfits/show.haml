@@ -1,0 +1,5 @@
+= render 'users/profile_header', user: @user
+
+.bg-grey-xxlight
+  .container-no-padding
+    = react_component 'Medias', username: @user.slug

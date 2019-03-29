@@ -1,0 +1,86 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+
+  Exclude:
+    - 'bin/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+    - 'lib/**/*'
+    - 'vendor/**/*'
+
+Metrics/LineLength:
+  Max: 150
+  Exclude:
+    - 'config/initializers/regexps.rb'
+    - 'config/initializers/devise.rb'
+
+Metrics/AbcSize:
+  Max: 150
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Max: 200
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Style/NumericPredicate:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Style/PredicateName:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/ExtraSpacing:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/VariableNumber:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'spec/**/*'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SymbolProc:
+  Exclude:
+    - 'spec/factories/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false

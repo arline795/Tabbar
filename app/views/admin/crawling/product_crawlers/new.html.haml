@@ -1,0 +1,12 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .font-large New Crawler
+    .my5.bg-white.p6
+      = simple_form_for [:admin, :crawling, @product_crawler] do |f|
+        .form-section
+          = f.input :user_id, label: 'User', collection: User.all, value_method: :id, label_method: :username, selected: @product_crawler.user_id
+          = f.input :base_url, label: @product_crawler.viglink ? 'Merchant' : 'Brands base url'
+          - if @product_crawler.viglink
+            = f.input :viglink, label: 'Viglink crawler?'
+        .right-align.mt2
+          = f.submit 'Save', class: 'button button-wide button-blue'

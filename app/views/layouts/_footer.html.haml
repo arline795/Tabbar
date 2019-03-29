@@ -1,0 +1,12 @@
+.bg-white.block
+  .container.center-align
+    .row.external-links.text-grey-dark
+      = link_to 'https://www.instagram.com/taddar_app/' do
+        %i.fa.fa-instagram
+      = link_to 'https://www.facebook.com/Taddar-1257616931020802/' do
+        %i.fa.fa-facebook
+      = link_to pages_contact_us_path do
+        %i.fa.fa-envelope
+    .font-small.text-grey-dark.light
+      = "\u00A9 #{Date.today.year} Taddar Enterprises PTY LTD - All rights reserved."
+      = link_to 'Contact Us', pages_contact_us_path, class: 'text-grey-dark text-black-hover'

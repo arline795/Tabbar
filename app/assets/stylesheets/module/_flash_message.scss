@@ -1,0 +1,30 @@
+/* Flash Message
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#flash-messages {
+  text-align: center;
+  font-style: italic;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.flash {
+  @extend .p1;
+  @extend .text-white;
+}
+
+.alert.alert,
+.alert.error, {
+  @extend .flash;
+  @extend .bg-red;
+}
+
+.alert.success {
+  @extend .flash;
+  @extend .bg-green;
+}
+
+.alert.notice {
+  @extend .flash;
+  @extend .bg-blue;
+}

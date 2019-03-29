@@ -1,0 +1,19 @@
+linters:
+  LineLength:
+    enabled: false
+  MultilinePipe:
+    enabled: false
+  UnnecessaryStringOutput:
+    exclude:
+      - app/views/layouts/_footer.html.haml
+  ConsecutiveSilentScripts:
+    exclude:
+      - app/views/users/dashboard/index.haml
+  IdNames:
+    enabled: false
+  InstanceVariables:
+    enabled: false
+  RepeatedId:
+    enabled: false
+exclude:
+  - app/views/medias/_list.haml

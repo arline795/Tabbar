@@ -1,0 +1,92 @@
+/* Mobile Navigation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: $tablet) {
+  .tablet-nav {
+    right: 0;
+  }
+
+  .tablet-left-nav {
+    left: 0;
+
+    h3, .sub-category {
+      padding: 0.5rem 2rem;
+    }
+  }
+
+  .tablet-nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    color: $white;
+
+    &:hover {
+      background-color: $grey-xdark;
+    }
+  }
+
+  .tablet-nav, .tablet-left-nav {
+    top: 0;
+    padding: 2rem 0.5rem;
+    z-index: 3;
+    position: absolute;
+    display: none;
+    box-shadow: $box-shadow-hover;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .mobile-nav, .mobile-left-nav {
+    padding: 2rem 0.5rem;
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    box-shadow: $box-shadow-hover;
+  }
+
+  .mobile-nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    color: $white;
+
+    &:hover {
+      background-color: $grey-xdark;
+    }
+  }
+
+  .sub-category a {
+    color: $grey-xdark;
+  }
+
+  .mobile-left-nav {
+    text-align: center;
+    display: none;
+  }
+}
+
+input#mobile-nav[type="checkbox"],
+input#mobile-left-nav[type="checkbox"],
+input#tablet-nav[type="checkbox"],
+input#tablet-left-nav[type="checkbox"] {
+  display: none;
+}
+
+input#mobile-left-nav[type="checkbox"]:checked  ~ .mobile-left-nav,
+input#mobile-nav[type="checkbox"]:checked  ~ .mobile-nav,
+input#tablet-left-nav[type="checkbox"]:checked  ~ .tablet-left-nav,
+input#tablet-nav[type="checkbox"]:checked  ~ .tablet-nav {
+  display: flex;
+}
+
+.parent-category {
+  h3 {
+    cursor: pointer;
+  }
+
+  .sub-category {
+    display: none;
+  }
+}

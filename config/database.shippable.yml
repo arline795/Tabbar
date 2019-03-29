@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  template: template0
+  username: postgres
+  timeout: 5000
+
+test:
+  <<: *default
+  database: yorlook_test_database
+

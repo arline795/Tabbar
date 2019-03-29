@@ -1,0 +1,42 @@
+/* Avatar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 100%;
+  border: 1px solid $grey-light;
+  background-color: $white;
+  padding: 1px;
+
+  img {
+    object-fit: cover;
+    height: 36px;
+    width: 36px;
+    border-radius: 100%;
+  }
+}
+
+.avatar-large {
+  width: 52px;
+  height: 52px;
+  background-size: cover;
+  border-radius: 100%;
+  border: 1px solid #DEDEDE;
+  background-color: #FFFFFF;
+  padding: 2px;
+
+  img {
+    object-fit: cover;
+    height: 46px;
+    width: 46px;
+    border-radius: 100%;
+  }
+}
+
+.header-avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: #e8e8e8 solid 2px;
+}

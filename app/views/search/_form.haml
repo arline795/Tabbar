@@ -1,0 +1,7 @@
+= simple_form_for :search, url: search_index_path, method: :get do |f|
+  .search-flex
+    = f.input :query, label: false, placeholder: 'Search'
+    = f.input :filter, label: false, collection: %w(Products Medias Users), include_blank: false
+    = f.button :submit, value: 'Search'
+
+

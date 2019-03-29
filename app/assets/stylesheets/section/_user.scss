@@ -1,0 +1,130 @@
+/* User
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.user-header {
+  width: 100%;
+  background: #f1f5f9;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &.has-header-image:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.3;
+  }
+}
+
+.user-header-avatar {
+  height: 20px;
+  width: 20px;
+  background-color: $white;
+  border: 3px solid $white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  img {
+    object-fit: cover;
+    height: 20px;
+    width: 20px;
+    border-radius: $border-radius;
+  }
+}
+
+.about-me {
+  background-color: #ffffff;
+  border-radius: 1em;
+  padding: 2em;
+}
+
+@media screen and (min-width: $tablet) {
+  .user-header-container {
+    bottom: -40px;
+    max-width: 75%;
+  }
+
+  .user-header-avatar {
+    height: 156px;
+    width: 156px;
+
+    img {
+      height: 150px;
+      width: 150px;
+    }
+  }
+}
+
+.user-menu-item {
+  padding: 1rem 0;
+
+  .font-large {
+    font-size: 18px;
+    width: 2rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.user-bar {
+  a, .profile-tags {
+    border-bottom: 2px solid transparent;
+    margin-right: 3rem;
+  }
+
+  a.active {
+    border-bottom: 4px solid $blue-light;
+    color: $blue-light;
+  }
+
+  span.font-medium {
+    font-size: 16px;
+    font-weight: 100;
+  }
+}
+
+.navigation-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+
+  a {
+    padding: 1rem 0;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 1px 3px 3px #bbb;
+    margin-left: 1rem;
+    width: 44px;
+    text-align: center;
+    background: #676767;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .user-menu-item {
+    padding: 1rem 3rem;
+  }
+
+  .navigation-buttons {
+    z-index: 999;
+    position: fixed;
+    transform: none;
+    right: 1rem;
+    top: auto;
+    bottom: 0;
+
+
+    a {
+      width: 1.7em;
+      display: block;
+      margin-bottom: 2rem;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .user-menu-item {
+    padding: 1rem 0.9rem;
+  }
+}

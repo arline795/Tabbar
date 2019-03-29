@@ -1,0 +1,155 @@
+/* Miscellaneous
+/  - Border
+/  - Required Asterisk
+/  - Display Properties
+/  - Float
+/  - Position
+/  - Horizontal Line
+/  - Clearfix hack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Border
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.rounded              { border-radius: $border-radius; }
+.rounded-large        { border-radius: $border-radius-large; }
+.rounded-top          { border-radius: $border-radius $border-radius 0 0; }
+.border-full          { border: $border; }
+.border-bottom-solid  { border-bottom-width: 1px; border-bottom-style: solid; }
+.border-bottom-dashed { border-bottom-width: 1px; border-bottom-style: dashed; }
+.border-top-solid     { border-top-width: 1px; border-top-style: solid; }
+
+/* Display Properties
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.block        { display: block !important; }
+.inline-block { display: inline-block !important; }
+.none         { display: none !important; }
+
+/* Float
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-pull-right { float: right; }
+.u-pull-left  { float: left; }
+.u-pull-none  { float: none; }
+
+/* Position
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-fixed      { position: fixed; }
+.u-relative   { position: relative; }
+.u-absolute   { position: absolute; }
+
+/* Horizontal Line
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  border-top: 1px solid $grey-xlight;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+/* Clearfix hack
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/* Selection
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.no-select   {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+}
+
+/* Underline
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+u {
+  text-decoration: none;
+  border-bottom: 2px solid $grey-light;
+}
+
+/* Z Index
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.z1 { z-index: 1; }
+.z2 { z-index: 2; }
+
+/* Opacity
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.o6 { opacity: 0.6; }
+
+/* transition
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.no-transition { transition: none; }
+.all-transition { transition: $all-transition; }
+
+/* Abbr
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+abbr[title] {
+  color: $grey;
+  text-decoration: none;
+}
+
+/* Truncate
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.truncate-w80px {
+  @extend .truncate;
+  max-width: 80px;
+}
+
+.truncate-w140px {
+  @extend .truncate;
+  max-width: 140px;
+}
+
+
+.sm-truncate-w140px {
+  @extend .truncate;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 140px;
+  }
+}
+
+/* Gradient background image
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.bg-gradient {
+  background-image: linear-gradient(-180deg, #68D79F 0%, #6488E1 100%);
+}
+
+/* Transparent background
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input.bg-transparent {
+  background-color: transparent;
+}
+
+/* Position
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+
+.step {
+border-radius: 100%;
+    border-style: solid;
+    width: 30px;
+    height: 30px;
+}

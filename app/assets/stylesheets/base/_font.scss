@@ -1,0 +1,26 @@
+/* Roboto
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=GFS+Didot);
+
+.roboto { font-family: $font-sans; }
+
+/* Typographica
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family:"TypoGraphica";
+  src:  font-url("TypoGraphica.eot?") format("eot"),
+        font-url("TypoGraphica.woff") format("woff"),
+        font-url("TypoGraphica.ttf") format("truetype"),
+        font-url("TypoGraphica.svg#TypoGraphica") format("svg");
+}
+
+.typographica { font-family: $font-typographica; }
+
+.font-serif { font-family: $font-serif; }
+
+.font-didot { font-family: 'GFS Didot', serif; }
+
+.underline-text {
+  box-shadow: 0 2px #000000
+}

@@ -1,0 +1,23 @@
+= render 'users/profile_header', user: @user
+- mens_category_id = Category.find_by(name: 'men').try(:id)
+- womens_category_id = Category.find_by(name: 'women').try(:id)
+
+- if @user.products.any?
+  = react_component 'Navigator',
+    user: @user,
+    categoryId: Category.user_has_women?(@user) ? { id: womens_category_id } : { id: mens_category_id },
+    womensCategoryId: womens_category_id,
+    mensCategoryId: mens_category_id,
+    hasWomenCategory: Category.user_has_women?(@user),
+    hasMenCategory: Category.user_has_men?(@user)
+
+- elsif @user == current_user
+  .bg-white
+    .container.relative
+    = render 'layouts/alert', heading: 'We are gathering your products',
+      description: "Please wait while we create your products from your website found here #{@user.website_url}"
+
+- else
+  .bg-white
+    .container.relative
+    = render 'layouts/alert', heading: 'No products', description: ''

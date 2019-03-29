@@ -1,0 +1,9 @@
+.pagination {
+  text-align: center;
+  padding: 10px;
+
+  a, span, em {
+    padding: 5px 10px;
+    border: 1px solid $grey;
+  }
+}

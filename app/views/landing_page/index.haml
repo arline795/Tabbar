@@ -1,0 +1,43 @@
+.sm-hide
+  .container.relative
+    .flex.pt12
+      .c1in2
+        = image_tag 'https://s3.amazonaws.com/yorlook/landing_page/mobile_app_1.png', class: 'w100 max-w350px'
+      .c1in2
+        %h1.font-title.typographica.logo.flex
+          taddar
+        %h3.font-larger.font-serif.bold  Shop any Instagram fashion image
+        %h3.text-grey-xdark.pb4 Simply copy and paste any Instagram post url and receive a collection of similar products.
+        = link_to 'Sign up with Instagram', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'button button-xlarge font-large button-blue'
+        %h6.pt5.text-grey-dark
+          By continuing, you agree to Taddars's
+          = link_to 'Terms of Service', terms_and_conditions_path
+          ', and'
+          = link_to 'Privacy Policy', privacy_policy_path
+        %p.pt2.text-grey-xdark
+          Already using Taddar?
+          = link_to 'Sign in', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'underline-text'
+          .flex.pt2
+            = image_tag 'app-store-btn.svg'
+            = image_tag 'play-store-btn.svg'
+
+/ mobile nav
+.md-hide.lg-hide
+  .container.relative.pt6
+    %h1.font-title.typographica.logo.flex
+      taddar
+    %h3.font-larger.font-serif.bold  Shop any Instagram fashion image
+    %h3.text-grey-xdark.pb4 Simply copy and paste any Instagram post url and receive a collection of similar products.
+    = link_to 'Sign up with Instagram', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'button button-xlarge font-large button-blue button-full-width'
+    %h6.pt5.text-grey-dark
+      By continuing, you agree to Taddars's
+      = link_to 'Terms of Service', terms_and_conditions_path
+      , and
+      = link_to 'Privacy Policy', privacy_policy_path
+    %p.pt2.text-grey-xdark
+      Already using Taddar?
+      = link_to 'Sign in', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'underline-text'
+    .flex.py4.justify-center
+      = image_tag 'app-store-btn.svg'
+      = image_tag 'play-store-btn.svg'
+    = image_tag 'https://s3.amazonaws.com/yorlook/landing_page/mobile_app_1.png', class: 'w100'

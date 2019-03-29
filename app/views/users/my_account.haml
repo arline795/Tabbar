@@ -1,0 +1,25 @@
+.flex-auto.bg-grey-xxlight
+  .container.py10
+    .flex.justify-center
+      .form-half
+        .mb10
+          .mb6.flex.justify-between.items-center
+            %h2.mb0 My Account
+
+          .bg-white.p6.rounded
+            .flex.flex-column
+              = simple_form_for @user, url: user_path(@user), method: :patch do |f|
+                = f.input :first_name, required: true
+                = f.input :last_name, required: true
+                = f.input :instagram_username, required: true
+                = f.input :email, required: true
+                = f.input :website_url
+                = f.label :country
+                = f.country_select :country, ['Australia', 'United States', 'United Kingdom'], required: true
+                = f.input :description
+                = f.button :submit, 'Save', class: 'button button-black'
+
+          .bg-white.p6.rounded.mt6
+            %h3 Close account
+            %p.italic.pb1 Closing your account is irreversible. All data will be destroyed.
+            = link_to 'Close account', user_path(@user), method: :delete, data: { confirm: 'All your information will be destroyed. This is irreversible. Are you sure?' }, class: 'button button-red'

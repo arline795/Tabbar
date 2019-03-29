@@ -1,0 +1,24 @@
+/* Override Simple Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.simple_form {
+  // Label
+  label {
+    @extend .text-black;
+  }
+
+  // Input
+  input:not([type="checkbox"]):not(.button-wide) {
+    @extend .w100;
+    @extend .mt1;
+  }
+
+  input[type="checkbox"] {
+    @extend .mr1;
+  }
+
+  // Help text
+  p.help-block {
+    @extend .text-grey-dark;
+    @extend .mb2;
+  }
+}

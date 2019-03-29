@@ -1,0 +1,26 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .font-large #{@product_crawler.user.username} / #{@product_crawler.base_url.gsub(/.*?:\/\//, '')}
+    .my5.bg-white.p6
+      .flex.items-center.crawler-menu
+        = link_to 'Settings', '#', class: 'active'
+        - Category.roots.each do |category|
+          = link_to "#{category.name.capitalize} Categories", admin_crawling_product_crawler_root_category_path(@product_crawler, category)
+      = simple_form_for [:admin, :crawling, @product_crawler] do |f|
+        .form-section
+          = f.input :user_id, label: 'User', collection: User.all, value_method: :id, label_method: :username, selected: @product_crawler.user_id
+          = f.input :base_url, label: @product_crawler.viglink ? 'Merchant' : 'Brands base url'
+          = f.label :location
+          = f.country_select :location, ['Australia', 'United States', 'United Kingdom'], required: true
+          = f.input :product_link_css
+          = f.input :title_css
+          = f.input :price_css
+          = f.input :description_css
+          = f.input :image_css
+          = f.input :image_attribute
+          = f.input :image_regex
+          = f.input :load_more_css
+          = f.input :js, label: 'Crawl by javascript?'
+          = f.input :paginated, label: 'Crawl page-by-page?'
+          .right-align.mt2
+            = f.submit 'Save', class: 'button button-wide button-blue'

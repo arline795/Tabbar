@@ -1,0 +1,14 @@
+= simple_form_for [:admin, @user] do |f|
+  .form-section
+    = f.input :username, required: true
+    = f.input :slug, required: true
+    = f.input :website_url, required: true
+    = f.input :instagram_username, required: true
+    = f.input :email, required: true, hint: "If you don't have their email its ok. When they login with instagram they have to change it"
+    = f.input :password, required: true, hint: 'The user has to change this once they login with Instagram for the first time. So just put any password'
+    = f.label :country
+    = f.country_select :country, ['Australia', 'United States', 'United Kingdom'], required: true, autofocus: true
+    = f.input :description
+    = f.input 'roles', as: :select, collection: %i(admin brand influencer regular), required: true
+  .form-submit
+    = f.button :submit, class: 'button button-red'

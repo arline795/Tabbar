@@ -1,0 +1,63 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .flex
+      .font-large.pr2
+        Commission Factory / #{@importer.user.username}
+      = link_to 'Crawl', execute_admin_commission_factory_importer_path(@importer, modify: true), method: :post, data: { confirm: 'Are you sure you want to import products from commission factory?' }, class: 'button button-blue mr2'
+      = link_to 'Delete Uncrawled Products', admin_commission_factory_importer_products_destroyer_index_path(@importer, crawled: false), method: :post, data: { confirm: "Are you sure you want to delete all products that haven't been crawled?" }, class: 'button button-red mr2'
+      = link_to 'Delete All Products', admin_commission_factory_importer_products_destroyer_index_path(@importer), method: :post, data: { confirm: 'Are you sure you want to delete all products?' }, class: 'button button-red'
+    .my5.bg-white.p6
+      .flex.items-center.crawler-menu
+        = link_to 'Settings', edit_admin_commission_factory_importer_path(@importer)
+        - Category.roots.each do |category|
+          = link_to "#{category.name.capitalize} Categories", admin_commission_factory_importer_root_category_path(@importer, category), class: ('active' if category == @category)
+
+      %p.text-blue.italic How it works: Rows in the cateogry column in the CSV (Found in settings) that match the query will create products in the chosen category.
+      = simple_form_for @commission_factory_category, url: admin_commission_factory_importer_categories_path, method: :post do |f|
+        = f.input :query
+        .form-group.select.optional.crawl_category_category_ids
+          = label_tag 'crawl_category[category_ids][]', 'Category', class: 'control-label select optional'
+          .categories-wrapper
+            .category-wrapper.flex.items-center.py2
+              = select_tag 'crawl_category[category_ids][]', options_for_select(@category.self_and_descendants.map(&:to_option)), include_blank: false, class: 'form-control select crawl-category-select m0'
+              = link_to 'x', '#', class: 'js-remove-category ml2'
+          = link_to 'Add another category', '#', class: 'js-add-category block my2'
+        .right-align.mt2
+          = f.submit 'Create Importer', class: 'button button-wide button-blue'
+
+    .font-large.px2 Manage Importers
+    .p2.flex.justify-between.items-center
+      .w40.truncate.pr2 Query
+      .w50.flex-column Category
+      .w10.flex-column Actions
+    - @importer.commission_factory_categories.where(category: @category.self_and_descendants).group_by(&:query).each do |query, commission_factory_categories|
+      .my4.bg-white.p6
+        .flex.justify-between.items-center
+          .w40.truncate.pr2{ title: query }= query
+          .w60.flex-column
+            - commission_factory_categories.each do |crawl_category|
+              - user_category = UserCategory.find_by(category: crawl_category.category, user: @importer.user)
+              - products_count = user_category.present? ? user_category.products.count : 0
+              .flex.w100.mt1
+                .w50 #{crawl_category.category.hierachy_name} (#{products_count})
+                .w50.right-align
+                  .dropdown
+                    %button.dropbtn Actions
+                    .dropdown-content
+                      - if user_category.present?
+                        User Category id: #{user_category.id}
+                      = link_to 'Import products', execute_admin_commission_factory_importer_category_path(@importer, crawl_category),
+                        method: :post,
+                        class: 'text-blue',
+                        id: "specs-crawl-#{crawl_category.id}",
+                        data: { confirm: 'Are you sure you want to crawl this category?' }
+                      = link_to 'Delete products', admin_commission_factory_importer_products_destroyer_index_path(commission_factory_category_id:  crawl_category.id, crawler_id: @importer.id),
+                        method: :post,
+                        class: 'text-red',
+                        id: "specs-delete-#{crawl_category.id}",
+                        data: { confirm: 'Are you sure you want to products?' }
+                      = link_to 'Delete products and category', admin_commission_factory_importer_category_path(id:  crawl_category.id, importer_id: @importer.id),
+                        method: :delete,
+                        class: 'text-red',
+                        id: "specs-delete-#{crawl_category.id}",
+                        data: { confirm: 'Are you sure you want to products?' }

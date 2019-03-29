@@ -1,0 +1,19 @@
+.crawler-menu {
+  margin-bottom: 4rem;
+
+  a {
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 5px solid transparent;
+    padding: 1rem 0;
+
+    & + a {
+      margin-left: 4rem;
+    }
+
+    &.active {
+      border-color: $blue;
+      color: $blue;
+    }
+  }
+}

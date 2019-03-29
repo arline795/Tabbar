@@ -1,0 +1,100 @@
+.sm-hide
+  .nav.flex.justify-between.items-center.h60px
+    = link_to 'taddar', root_path, class: 'font-larger typographica logo flex'
+
+    - if user_signed_in? && current_user.is_admin?
+      = react_component 'Search'
+
+    .flex.items-center.ml4
+      - if user_signed_in?
+        = link_to user_outfits_path(current_user) do
+          .avatar.ml4
+            = image_tag current_user.avatar.url
+        .ml2.font-large
+          = link_to '#', class: 'js-menu-button' do
+            %i.fa.fa-bars.pointer
+
+        / side bar
+        %input#tablet-nav{ type: 'checkbox' }
+        .tablet-nav.flex.items-center.flex-column.c1in3.p0.bg-black
+          .tablet-nav-bar.flex.flex-column.w100
+            .flex.justify-between.border-bottom-solid.border-grey-xlight.pb3.px2.border-grey-xlight
+              .flex.items-center
+                = link_to user_outfits_path(current_user) do
+                  .avatar
+                    = image_tag current_user.avatar.url
+                .ml2.truncate-w100px= link_to current_user.username, user_outfits_path(current_user), class: 'text-white bold'
+              %label.tablet-nav-label{ for: 'tablet-nav' }
+                %span.font-large.text-white.text-grey-hover.tablet-nav-open
+                  %i.fa.fa-times
+            - if current_user.is_admin?
+              = link_to 'Users', admin_users_path,
+                class: 'tablet-nav-item'
+              = link_to 'Web Crawlers', admin_crawling_product_crawlers_path,
+                class: 'tablet-nav-item'
+              = link_to 'Viglink Crawlers', admin_crawling_product_crawlers_path(viglink: true),
+                class: 'tablet-nav-item'
+              = link_to 'Commission Factory', admin_commission_factory_importers_path,
+                class: 'tablet-nav-item'
+              = link_to 'Proxies', admin_proxies_path,
+                class: 'tablet-nav-item'
+              = link_to 'Sidekiq Dash', sidekiq_web_path,
+                class: 'tablet-nav-item'
+
+            = link_to 'My Account', my_account_users_path(current_user),
+              class: 'tablet-nav-item'
+
+            - if user_masquerade?
+              = link_to 'Unmasquerade', back_masquerade_path(current_user),
+              class: 'tablet-nav-item'
+            - else
+              = link_to 'Log out', destroy_user_session_path, method: :delete,
+              class: 'tablet-nav-item'
+
+/ mobile nav
+.md-hide.lg-hide
+  .flex.justify-between.items-center
+    .mobile-nav-top
+      = link_to 'taddar', root_path,
+        class: 'font-larger typographica logo'
+
+    - if user_signed_in? && current_user.is_admin?
+      = react_component 'Search'
+
+    %label.mobile-nav-label{ for: 'mobile-nav' }
+      %span.font-larger.text-grey-hover.mobile-nav-open
+        %i.fa.fa-bars.pointer
+
+    %input#mobile-nav{ type: 'checkbox' }
+    .mobile-nav.flex.items-center.sm-flex-column.sm-c1in1.sm-p0.md-flex-column.md-c1in3.md-p0.bg-black
+      .mobile-nav-bar.flex.flex-column.sm-c1in1
+        .flex.justify-between.sm-c1in1.sm-pt4.sm-px2.pb3
+          - if user_signed_in?
+            .flex.items-center
+              = link_to user_outfits_path(current_user) do
+                .avatar.ml4.sm-ml2
+                  = image_tag current_user.avatar.url
+              .ml2.truncate-w100px= link_to current_user.username,  user_outfits_path(current_user), class: 'text-white bold'
+          - else
+            .flex.mt1
+              .ml2= link_to 'Log in', user_instagram_omniauth_authorize_path(scope: 'public_content'), class: 'text-white'
+          %label.mobile-nav-label{ for: 'mobile-nav' }
+            %span.font-larger.text-grey-hover.mobile-nav-open.text-black
+              %i.fa.fa-times.mobile-nav-toggle.text-white.pointer.pr2
+        - if user_signed_in?
+          - if current_user.is_admin?
+            = link_to 'Users', admin_users_path,
+              class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+            = link_to 'Website Crawlers', admin_crawling_product_crawlers_path,
+              class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+            = link_to 'Viglink Crawlers', admin_crawling_product_crawlers_path(viglink: true),
+              class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+            = link_to 'Proxies', admin_proxies_path,
+              class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+            = link_to 'Sidekiq Dash', sidekiq_web_path,
+              class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+
+          = link_to 'My Account', my_account_users_path(current_user),
+            class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'
+          = link_to 'Log out', destroy_user_session_path, method: :delete,
+            class: 'ml4 sm-ml0 md-ml0 mobile-nav-item'

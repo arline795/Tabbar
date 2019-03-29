@@ -1,0 +1,50 @@
+.max-w420px {
+  max-width: 420px;
+}
+
+.complete-box {
+  svg {
+    width: 25rem;
+  }
+
+  .tick{
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: stroke-dashoffset 1s 0.5s ease-out;
+  }
+
+  .trigger.drawn + svg .tick {
+    stroke-dashoffset: 0;
+  }
+
+  .mt-6 {
+    margin-top: -6rem;
+  }
+
+  .mb5 {
+    margin-bottom: 5rem;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.5em;
+    font-weight: 100;
+  }
+
+  a.complete-button {
+    padding: 0.4rem 27%;
+    font-size: 1.8rem;
+    background: #383838;
+    color: #fff;
+    border: none;
+  }
+}

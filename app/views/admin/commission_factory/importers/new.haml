@@ -1,0 +1,9 @@
+.flex-auto.bg-grey-xxlight.min-h100vh
+  .container.py5
+    .font-large New Commission Factory Importer
+    .my5.bg-white.p6
+      = simple_form_for @crawler, url: admin_commission_factory_importers_path, method: :post do |f|
+        .form-section
+          = f.input :user_id, label: 'User', collection: User.all, value_method: :id, label_method: :username, selected: @crawler.user_id
+        .right-align.mt2
+          = f.submit 'Save', class: 'button button-wide button-blue'
