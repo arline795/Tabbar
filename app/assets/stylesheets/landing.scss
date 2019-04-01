@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+a {
+  text-decoration: none!important;
+}
+
+.wi-100 {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header {
+  padding: 10px 0;
+}
+
+.header .logo {
+  padding: 5px 0;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nunito-sans {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.f-50 {
+  font-size: 50px!important;
+}
+
+.banner {
+  background-image: url("../src/assets/img/bg.png");
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding-bottom: 60px;
+}
+
+.banner-text {
+  margin-top: 157px;
+  padding-right: 42px;
+}
+
+.title {
+  color: #232D42;
+  font-weight: 900;
+  line-height: 59px;
+  letter-spacing: 1.724138px;
+}
+
+.description {
+  color: #737B8B;
+  font-size: 16px;
+  line-height: 37px;
+  letter-spacing: 0.5333333px;
+}
+
+.btn {
+  background: #6F6BFF;
+  color: #FFFFFF;
+  padding: 12px 46px;
+  margin: 20px 0;
+  border-radius: 29.5px;
+  box-shadow: 0px 12px 24px rgba(111, 107, 255, 0.27);
+}
+
+.instabtn {
+  width: 52%;
+  background: #6F6BFF;
+  color: #FFFFFF;
+  padding: 12px 46px;
+  margin: 20px 0;
+  border-radius: 29.5px;
+  box-shadow: 0px 12px 24px rgba(111, 107, 255, 0.27);
+}
+
+.instaText {
+  color: #FFFFFF;
+}
+
+
+.btn .signup {
+  color: #FFFFFF;
+  font-family: "Nunito Sans";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.8823533px;
+}
+
+.agree {
+  color: #737B8B;
+  font-size: 12px;
+  font-family: "Nunito Sans";
+  line-height: 30px;
+  letter-spacing: 0.4px;
+}
+
+.conditions {
+  color: #000000;
+}
+
+.signin {
+  color: #6F6BFF;
+}
+
+.badges {
+  margin: 30px 0 0;
+}
+
+.social {
+  margin: 138px 0 0;
+}
+
+.spacing {
+  padding-right: 15px;
+}
+
+.screen {
+  margin-top: 88px;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(0 62px 74px #C2C8DE);
+  filter: drop-shadow(0 62px 74px #C2C8DE);
+}
+
+@media(max-width: 991px) {
+  .banner-text {
+    margin-top: 112px;
+    padding-right: 42px;
+  }
+  .social {
+    margin: 40px 0 0;
+  }
+  .screen {
+    margin-top: 75px;
+  }
+}
+
+@media(max-width: 575px) {
+  .header .logo {
+    padding: 5px 20px;
+  }
+  .banner-text {
+    margin-top: 80px;
+    padding: 4px;
+  }
+  .f-50 {
+    font-size: 33px!important;
+  }
+  .description {
+    line-height: 25px;
+    font-size: 14px;
+  }
+  .btn {
+    padding: 12px 20px;
+    margin: 15px 0;
+  }
+  .screen {
+    text-align: center!important;
+    margin-top: 60px;
+  }
+  .nopadding {
+    padding: 0!important;
+  }
+}

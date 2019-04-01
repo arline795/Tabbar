@@ -17,3 +17,6 @@ global.InstagramPostUploader = require('components/image_dashboard/InstagramPost
 global.ImageDashboardUploader = require('components/image_dashboard/ImageDashboardUploader').default;
 global.ImageOfInterestList = require('components/image_of_interest/list').default;
 global.RoiSelect = require('components/image_uploader/RoiSelect').default;
+
+global.LandingHeader = require('components/landing_page/Header.js').default;
+global.LandingBody = require('components/landing_page/Body.js').default;
