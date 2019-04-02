@@ -25,7 +25,7 @@ module CommissionFactory
     def user_categories_and_products!
       user_categories.each do |uc|
         uc.products.each do |p|
-          ::Products::DestroyerWorker.perform_async(p.id, uc.id)
+          ::Products::DestroyerWorker.perform_async(p.id)
         end
         uc.destroy!
       end

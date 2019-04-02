@@ -3,20 +3,15 @@ Taddars mission is to be the best at tagging products on social media images and
 
 Taddars first goal is for users to like images on instagram. And we show the products in Taddars Mobile App.
 
-# Trello Board
-Trello is used for creating and managing tasks.
-https://trello.com/b/HaqRp0O6/yorlook
-
-# Copyright
-This application is owned by Joseph Konop, Brisbane Australia.
-
 This file is part of Taddar.
+
+Taddars can not be copied and/or distributed without the express permission of Joseph Konop
 
 ## How to setup the project
 
 1. Clone the project:
 
-        git clone git@github.com:joeyk16/yorlook.git
+        git@github.com:arline795/Tabbar.git
         cd yorlook
 
 2. Copy config files from example and use yours:
@@ -43,10 +38,6 @@ This file is part of Taddar.
 
         bundle exec sidekiq
 
-## Taddars Mobile App Repo
-iOS and Android. React Native.
-https://github.com/joeyk16/taddar_mobile_app
-
 ## Production Server
 url: www.taddar.com
 ssh: `ssh deploy@52.34.30.10`
@@ -54,9 +45,6 @@ restart server: `passenger-config restart-app`
 
 ## When Crawling on Development make sure you run
 rake jobs:work
-
-## SSH Production
-`ssh deploy@52.34.30.10`
 
 ## Current when sshing
 `cd taddar/current`
@@ -92,9 +80,3 @@ https://medium.com/@andrewcbass/install-redis-v3-2-on-aws-ec2-instance-93259d40a
 
 ## Stop Redis on production
 `service /etc/init.d/redis_6379 stop`
-
-## PR's that could revert
-Payments: https://github.com/joeyk16/yorlook/pull/216
-Messages: https://github.com/joeyk16/yorlook/pull/202
-Tagging System: https://github.com/joeyk16/yorlook/pull/217
-product_location_yml_file: https://github.com/joeyk16/yorlook/pull/299

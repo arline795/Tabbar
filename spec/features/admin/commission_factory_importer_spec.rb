@@ -65,6 +65,24 @@ RSpec.describe 'Commssion Factory Importer', type: :feature do
         expect(page).to_not have_content('Women / Dresses (2)')
         expect(page).to_not have_content('>Casual Dresses')
       end
+
+      context 'delete uncrawled products' do
+        let!(:user_category_products) { create_list(:user_category_product, 4, user_category: user_category) }
+
+        before do
+          allow_any_instance_of(TaddarVision::DestroyProduct).to receive(:call).and_return(:nil)
+          Product.all.update(user: user)
+          Product.first(2).each { |p| p.update(crawled: true) }
+        end
+
+        it do
+          click_link 'Edit'
+          click_link('Women Categories')
+          click_link('Delete Uncrawled Products')
+          expect(user.products.count).to eq(2)
+          expect(user.products.map(&:crawled)).to eq([true, true])
+        end
+      end
     end
   end
 end

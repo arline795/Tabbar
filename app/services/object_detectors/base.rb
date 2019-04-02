@@ -5,7 +5,7 @@ module ObjectDetectors
   class Base
     def fetch_category_coordinates
       HTTParty.get("#{ENV['TADDAR_OBJECT_DETECTOR_URL']}#{@image_url}",
-                   headers: { 'Content-Type' => 'application/json' })
+                   headers: { 'Content-Type' => 'application/json' }).body
     end
 
     def deserialize_response

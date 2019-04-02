@@ -20,7 +20,7 @@ class Admin::CommissionFactory::ProductsDestroyerController < Admin::BaseControl
     if params[:commission_factory_category_id].present?
       user_category_products
     else
-      @products = CommissionFactoryImporter.find(params[:crawler_id]).user.products if params[:crawler_id]
+      @products = CommissionFactoryImporter.find(params[:importer_id]).user.products if params[:importer_id]
       @products = @products.where(crawled: false) if params[:crawled] == 'false'
     end
   end

@@ -1,10 +1,10 @@
 class ProductImage < ActiveRecord::Base
   belongs_to :product
 
-  has_attached_file :product_image, styles: { large: '600', medium: '250' }
+  has_attached_file :product_image, styles: { large: '800', medium: '250' }
   validates_attachment_content_type :product_image, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :cropped_image, styles: { large: '600', medium: '250' }
+  has_attached_file :cropped_image, styles: { large: '800', medium: '250' }
   validates_attachment_content_type :cropped_image, content_type: /\Aimage\/.*\Z/
 
   def url(size)
